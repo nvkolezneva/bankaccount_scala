@@ -1,0 +1,46 @@
+###
+GET http://localhost:8081/accounts
+
+###
+POST http://localhost:8081/accounts HTTP/1.1
+Content-Type: application/json
+
+{
+  "owner_user_id": "905121d6-8633-11ed-a1eb-0242ac120002",
+  "name": "test"
+}
+
+###
+GET http://localhost:8081/accounts/b5035ce2-8633-11ed-a1eb-0242ac120002
+
+###
+PUT http://localhost:8081/accounts/b5035ce2-8633-11ed-a1eb-0242ac120002 HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "new test!"
+}
+
+###
+DELETE http://localhost:8081/accounts/b5035ce2-8633-11ed-a1eb-0242ac120002 HTTP/1.1
+
+
+### 
+POST http://localhost:8081/cash HTTP/1.1
+Content-Type: application/json
+
+{
+  "account_Id": "155af348-8634-11ed-a1eb-0242ac120002",
+  "amount_change": 1000,
+  "op_type": "REPLENISH_ACCOUNT"
+}
+
+### 
+POST http://localhost:8081/transfer/by_account_id HTTP/1.1
+Content-Type: application/json
+
+{
+  "senderaccount_Id": "155af348-8634-11ed-a1eb-0242ac120002",
+  "recipientaccount_Id": "26416700-8634-11ed-a1eb-0242ac120002",
+  "transfer_amount": 1000
+}

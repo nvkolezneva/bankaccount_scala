@@ -14,8 +14,6 @@ final case class TransferHistory(
     status: String,
     senderaccount_Id: UUID,
     recipientaccount_Id: UUID,
-    categoryId: Option[UUID],
     transfer_amount: Int,
-    cashback_amount: Option[Int],
     created_at: LocalDateTime = LocalDateTime.now()
 )
